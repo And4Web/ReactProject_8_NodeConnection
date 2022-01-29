@@ -11,11 +11,15 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("This is a homepage.");
+  res.send("This is a homepage...");
 });
 
 app.get("/products", (req, res) => {
   res.send("This is a Products page.");
+});
+app.get("/products/smartphones", (req, res) => {
+  const smartphones = ["xiaomi", "oppo", "vivo", "samsung"];
+  res.send(smartphones);
 });
 
 app.listen(PORT, () => {
